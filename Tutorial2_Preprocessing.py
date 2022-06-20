@@ -64,3 +64,61 @@ print(part_of_row1) # [6 7]
 # complete columns from the array (not possible on lists!)
 col0 = a[:, 0]
 print(col0) # [1 5 9]
+
+""" Eine der besten M¨oglichkeiten, Daten zu untersuchen, ist, diese zu visualisieren. Eine Möglichkeit,
+ dies zu tun, ist die Verwendung eines Streudiagramms. In obigem
+Beispiel verwenden wir hierzu das Modul matplotlib.pyplot und die Funktion
+scatter: Auf der x-Achse befinden sich die Werte der 0. Spalte (X[:, 0]) und auf
+der y-Achse die Werte der 1. Spalte der Datenobjekte (X[:, 1]). Jedes Datenobjekt wird nun in der Ebene gemäss seinen
+ Merkmalen als Punkt gezeichnet – die Farbe c des Punktes ist durch die Klasse der jeweiligen Datenobjekte gegeben
+(siehe Abb. 2.1). """
+
+# 2.1.2 Integrierte Standard-Daten
+""" Das Projekt scikit-learn wird mit ein paar kleinen, realen Standard-Datens¨atzen
+geliefert, fur die Sie keine externe Datei laden m ¨ ussen. Jeder dieser Datensätze kann Abbildung 2.1: Visualisieren eines synthetischen Datensatzes mit Datenobjekten, die aus
+zwei Klassen stammen und mit zwei Merkmalen beschrieben sind.
+mit einer eigenen Funktion aus dem Modul datasets geladen werden (z.B. load_iris()
+oder load_breast_cancer()).
+Die Ruckgabe dieser Funktionen ist ein sogenanntes ¨ Bunch. Ein Bunch verh¨alt sich
+¨ahnlich wie ein W¨orterbuch dict, das alle Daten und einige Metadaten uber die ¨
+Daten enth¨alt. Die Merkmalswerte der Daten werden im Element mit Schlussel ¨
+"data" gespeichert, das ein zweidimensionales NumPy Array der Gr¨osse N × n ist
+(Anzahl Datenobjekte × Anzahl Merkmale). Die Namen der Merkmale kann man
+in der Liste mit Schlussel ¨ "feature_names" finden und im Falle eines uberwachten ¨
+Problems wird im Array mit dem Schlussel ¨ "target" die Zielvariable gespeichert. """
+
+from sklearn import datasets
+# load an integrated dataset
+iris = datasets.load_iris()
+# key data gives access to the features
+print(iris["data"])
+# key target gives the ground truth for the iris dataset
+print(iris["target"])
+# key feature_names gives a list of the feature names
+print(iris["feature_names"])
+
+""" Die Ausgabe des obigen Programmes lautet:
+[[5.1 3.5 1.4 0.2]
+[4.9 3. 1.4 0.2]
+[4.7 3.2 1.3 0.2]
+...
+[5.9 3. 5.1 1.8]]
+[0 0 0 0... 2 2 2]
+[’sepal length (cm)’, ’sepal width (cm)’, ’petal length (cm)’, ’petal width
+(cm)’]
+"""
+
+""" Hinweis: In einem Bunch ist es im Gegensatz zu einem W¨orterbuch m¨oglich, die Werte eines Schlussels statt mit ¨ iris["data"] auch direkt mit iris.data auszulesen.
+Wir werden zwischendurch die Datenstruktur DataFrame des externen Paketes pandas
+verwenden. Ein DataFrame kann man sich wie eine Tabellenblatt in Excel vorstellen: Jede Zeile (d.h. jedes Datenobjekt) ist nummeriert (0, 1, 2, . . .) und jede Spalte (d.h. jedes Merkmal) wird mit dem Namen des Merkmales beschriftet.
+Um ein DataFrame zu erzeugen ben¨otigen wir also die Merkmale der Datenobjekte
+(iris["data") und die Namen der Merkmale (iris["feature_names"):"""
+from sklearn import datasets
+import pandas as pd
+# load an integrated dataset
+iris = datasets.load_iris()
+# create dataframe from data in iris.data
+# label the columns using the strings in iris.feature_names
+X, f = iris["data"], iris["feature_names"]
+iris_dataframe = pd.DataFrame(X, columns=f)
+print(iris_dataframe)

@@ -35,6 +35,8 @@ for x in range(15, 26, 1):
         tree = DecisionTreeClassifier(random_state=0,
         min_samples_leaf=x,
         max_depth=y)
+
+        # Trainiert den Entscheidungsbaum
         tree.fit(X_train, y_train)
         score = tree.score(X_test, y_test)
 
