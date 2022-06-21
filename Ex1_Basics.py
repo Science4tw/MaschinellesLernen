@@ -38,3 +38,27 @@ d["one"] = 0.5
 print(d) # {'one': 0.5, 'two': 2, 'three': 3, 'five': 5}
 print(d["two"]) # 2
 
+""" Schleifen (Start) """
+
+values = [1,2,3] # Python Liste mit 3 Werten
+# Ausgeben der Liste:
+for val in values:
+    print(val)
+
+# 2 Verschachtelte Schleifen
+# 1 Validation of parameter via grid search -> ERHALTE X*Y MODELLLE und bewerte diese jeweils!!
+for x in [0.0001, 0.001, 0.01, 0.1]:
+    for y in [3, 4, 5, 6, 7, 8, 9, 10]:
+        print(x, y)
+
+    # z.B Definiere einen DecisionTree für jede Kombination aus x und y
+
+
+
+# Verschachtelte Range Schleifen
+for x in range(15, 26, 1): # von 15 bis 25
+    for y in range(10, 21, 1): # von 10 bis 20
+        print(x, y)
+
+""" Schelfien (Ende)"""
+

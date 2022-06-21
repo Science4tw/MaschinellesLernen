@@ -30,8 +30,8 @@ from sklearn.tree import DecisionTreeClassifier
 # validation of parameters via grid search
 best_score = 0
 best_parameters = {}
-for x in range(15, 26, 1):
-    for y in range(10, 21, 1):
+for x in range(15, 26, 1): # von 15 bis 25
+    for y in range(10, 21, 1): # von 10 bis 20
         tree = DecisionTreeClassifier(random_state=0,
         min_samples_leaf=x,
         max_depth=y)

@@ -108,9 +108,9 @@ print(iris["feature_names"])
 (cm)’]
 """
 
-""" Hinweis: In einem Bunch ist es im Gegensatz zu einem W¨orterbuch m¨oglich, die Werte eines Schlussels statt mit ¨ iris["data"] auch direkt mit iris.data auszulesen.
+""" Hinweis: In einem Bunch ist es im Gegensatz zu einem W¨orterbuch m¨oglich, die Werte eines Schlussels statt mit ¨ iris["data"] auch direkt mit iris.data auszulesen.
 Wir werden zwischendurch die Datenstruktur DataFrame des externen Paketes pandas
-verwenden. Ein DataFrame kann man sich wie eine Tabellenblatt in Excel vorstellen: Jede Zeile (d.h. jedes Datenobjekt) ist nummeriert (0, 1, 2, . . .) und jede Spalte (d.h. jedes Merkmal) wird mit dem Namen des Merkmales beschriftet.
+verwenden. Ein DataFrame kann man sich wie eine Tabellenblatt in Excel vorstellen: Jede Zeile (d.h. jedes Datenobjekt) ist nummeriert (0, 1, 2, . . .) und jede Spalte (d.h. jedes Merkmal) wird mit dem Namen des Merkmales beschriftet.
 Um ein DataFrame zu erzeugen ben¨otigen wir also die Merkmale der Datenobjekte
 (iris["data") und die Namen der Merkmale (iris["feature_names"):"""
 from sklearn import datasets
