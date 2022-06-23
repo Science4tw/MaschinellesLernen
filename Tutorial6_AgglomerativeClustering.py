@@ -21,7 +21,7 @@ agg_clustering = AgglomerativeClustering(linkage="complete", n_clusters=4)
 # Linkage -> z.b. single oder complete (gibt auch weitere)
 # n_clusters -> Anzahl Cluster (Nehmen 4, da wirs schon wissen vom toy-example)
 
-assignment = agg_clustering.fit_predict(X) # Assignment (Cluster - Zugehörigkeit) definieren bzw. trainieren & vorhersagen
+assignment = agg_clustering.fit_predict(X) # Assignment (Cluster-Zugehörigkeit) definieren bzw. trainieren&vorhersagen
 plt.scatter(X[:, 0], X[:, 1], c=assignment) # c -> Farbe -> Nach Cluster Zugehörigkeit
 plt.show()
 print(assignment) # Ausgabe der Cluster-Zugehörigkeit
@@ -50,7 +50,3 @@ for k in range(2, 10):
 
 """ Hierarchisches Verfahren Beispiel 1 (Ende)"""
 
-""" Hierarchisches Verfahren Beispiel 2 (Start)"""
-# "Zeichnen" von Dendrogrammen
-
-""" Hierarchisches Verfahren Beispiel 2 (Ende)"""
