@@ -15,6 +15,6 @@ print("Clusterzugehörigkeiten: ", dbscan.labels_)
 plt.scatter(X[:, 0],X[:, 1], c= dbscan.labels_) # Alle Zeilen aus der 0-ten Spalte, 1-ten Spalte, mit der
 # Farbe der Labels
 
-plt.xlabel("Merkmale  1")
+plt.xlabel("Merkmale 1")
 plt.ylabel("Merkmale 2")
 plt.show()
